@@ -1,0 +1,43 @@
+departments
+rel dept_manager
+rel dept_emp
+-
+dept_no character(255)  pk 
+dept_name character(255)
+
+dept_emp
+-
+emp_no INT fk - employee.emp_no
+dept_no character(255) fk >-< departments.dept_no
+
+dept_manager
+-
+dept_no character(255) FK >- departments.dept_no
+emp_no INT  FK - employee.emp_no
+
+employee
+rel salaries
+rel titles
+rel dept_manager
+rel dept_emp
+-
+emp_no INT pk 
+emp_title_id character(6) fk >- titles.title_id
+birth_date character(8)
+first_name character(255)
+last_name character(255)
+sex character(1)
+hire_date character(8)
+
+salaries
+-
+emp_no INT fk - employee.emp_no
+salary INT 
+
+titles
+-
+title_id character(6) pk
+title character(255)
+
+
+
